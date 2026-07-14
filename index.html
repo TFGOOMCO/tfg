@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="qENG2J-CrEgr-ZeJi4EffMMgNoszlhe5ddvPHoKsy7I" />
+<title>TFG OOMCO | Coming Soon</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial,sans-serif;
+min-height:100vh;display:flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#0b132b,#1c2541,#3a506b,#5bc0be);
+background-size:300% 300%;animation:bg 14s ease infinite;color:#fff;overflow:hidden}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.grid{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:40px 40px}
+.card{position:relative;z-index:1;width:min(92%,820px);padding:50px;border-radius:24px;background:rgba(255,255,255,.12);backdrop-filter:blur(14px);text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.logo{width:90px;height:90px;margin:auto;border-radius:20px;background:#fff;color:#123;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:bold}
+h1{margin:22px 0 10px;font-size:42px}
+p{opacity:.9;line-height:1.7}
+.timer{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:34px 0}
+.box{background:rgba(255,255,255,.14);padding:18px;border-radius:16px;min-width:92px}
+.num{font-size:34px;font-weight:bold}
+.lbl{font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.8}
+a.btn{display:inline-block;margin-top:18px;padding:14px 28px;background:#fff;color:#123;text-decoration:none;border-radius:999px;font-weight:bold}
+footer{margin-top:30px;font-size:13px;opacity:.85}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="card">
+<div class="logo">TFG</div>
+<h1>TFG OOMCO</h1>
+<p>We're building a better digital experience.<br>Our new website will be launching soon.</p>
+<div class="timer">
+<div class="box"><div class="num" id="d">00</div><div class="lbl">Days</div></div>
+<div class="box"><div class="num" id="h">00</div><div class="lbl">Hours</div></div>
+<div class="box"><div class="num" id="m">00</div><div class="lbl">Minutes</div></div>
+<div class="box"><div class="num" id="s">00</div><div class="lbl">Seconds</div></div>
+</div>
+<a class="btn" href="https://tfgoomco.github.io/tfg/" target="_blank">Visit Website</a>
+<footer>© 2026 TFG OOMCO. All Rights Reserved.</footer>
+</div>
+<script>
+const launch=new Date();launch.setDate(launch.getDate()+75);
+function tick(){
+const diff=launch-new Date();
+const d=Math.max(0,Math.floor(diff/86400000));
+const h=Math.max(0,Math.floor(diff%86400000/3600000));
+const m=Math.max(0,Math.floor(diff%3600000/60000));
+const s=Math.max(0,Math.floor(diff%60000/1000));
+dEl.textContent=d;hEl.textContent=h;mEl.textContent=m;sEl.textContent=s;
+}
+const dEl=document.getElementById('d'),hEl=document.getElementById('h'),mEl=document.getElementById('m'),sEl=document.getElementById('s');
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
 
